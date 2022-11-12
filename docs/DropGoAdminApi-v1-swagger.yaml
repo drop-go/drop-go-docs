@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-11-08T16:31:18Z"
+  version: "2022-11-12T08:51:37Z"
   title: "DropGoAdminApi"
 host: "admin.drop-go-api.xyz"
 schemes:
@@ -612,6 +612,9 @@ definitions:
     - "name"
     - "password"
     properties:
+      iconExtension:
+        type: "string"
+        description: "アイコン画像の拡張子"
       password:
         type: "string"
         description: "パスワード"
@@ -636,6 +639,9 @@ definitions:
     - "name"
     - "password"
     properties:
+      iconExtension:
+        type: "string"
+        description: "アイコン画像の拡張子"
       password:
         type: "string"
         description: "パスワード"
