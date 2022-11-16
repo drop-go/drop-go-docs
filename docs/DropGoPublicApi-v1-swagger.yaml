@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-11-12T05:13:41Z"
+  version: "2022-11-16T14:02:55Z"
   title: "DropGoPublicApi"
 host: "public.drop-go-api.xyz"
 schemes:
