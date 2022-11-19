@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-11-16T14:59:11Z"
+  version: "2022-11-19T12:05:29Z"
   title: "DropGoAdminApi"
 host: "admin.drop-go-api.xyz"
 schemes:
@@ -693,7 +693,7 @@ definitions:
     type: "object"
     properties:
       createdAt:
-        type: "string"
+        type: "integer"
         description: "アカウント作成日時"
       name:
         type: "string"
