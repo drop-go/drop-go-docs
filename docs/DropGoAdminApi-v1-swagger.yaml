@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-11-19T12:05:29Z"
+  version: "2022-11-25T00:55:39Z"
   title: "DropGoAdminApi"
 host: "admin.drop-go-api.xyz"
 schemes:
@@ -70,6 +70,264 @@ paths:
     options:
       consumes:
       - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+  /event:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/GetAllEventResponseModel"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "500":
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+      security:
+      - DropGoApiStackAuthorizerLambda738AEA6B: []
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "PostEventRequestModel"
+        required: true
+        schema:
+          $ref: "#/definitions/PostEventRequestModel"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/PostEventResponseModel"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "500":
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+      security:
+      - DropGoApiStackAuthorizerLambda738AEA6B: []
+    options:
+      consumes:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+  /event/{eventId}:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "eventId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/GetEventResponseModel"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "500":
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+      security:
+      - DropGoApiStackAuthorizerLambda738AEA6B: []
+    put:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "eventId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "PutEventRequestModel"
+        required: true
+        schema:
+          $ref: "#/definitions/PutEventRequestModel"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/PutEventResponseModel"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "500":
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+      security:
+      - DropGoApiStackAuthorizerLambda738AEA6B: []
+    delete:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "eventId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/DeleteEventResponseModel"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+        "500":
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/Error"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Credentials:
+              type: "string"
+            Content-Type:
+              type: "string"
+      security:
+      - DropGoApiStackAuthorizerLambda738AEA6B: []
+    options:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "eventId"
+        in: "path"
+        required: true
+        type: "string"
       responses:
         "200":
           description: "200 response"
@@ -604,54 +862,41 @@ securityDefinitions:
     in: "header"
     x-amazon-apigateway-authtype: "custom"
 definitions:
-  PostUserRequestModel:
-    type: "object"
-    required:
-    - "description"
-    - "email"
-    - "name"
-    - "password"
-    properties:
-      password:
-        type: "string"
-        description: "パスワード"
-      iconDataURL:
-        type: "string"
-        description: "アイコン画像のデータURL"
-      name:
-        type: "string"
-        description: "アカウント名前 (企業名・店名)"
-      description:
-        type: "string"
-        description: "アカウント紹介文"
-      email:
-        type: "string"
-        description: "メールアドレス"
-    description: "アカウント情報を登録します。"
-  PutUserRequestModel:
-    type: "object"
-    required:
-    - "description"
-    - "email"
-    - "name"
-    - "password"
-    properties:
-      password:
-        type: "string"
-        description: "パスワード"
-      iconDataURL:
-        type: "string"
-        description: "アイコン画像のデータURL"
-      name:
-        type: "string"
-        description: "アカウント名前 (企業名・店名)"
-      description:
-        type: "string"
-        description: "アカウント紹介文"
-      email:
-        type: "string"
-        description: "メールアドレス"
-    description: "アカウント情報を更新します。"
+  GetAllEventResponseModel:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        createdAt:
+          type: "number"
+          description: "イベント登録日時"
+        address:
+          type: "string"
+          description: "イベント住所"
+        endDate:
+          type: "number"
+          description: "イベントの公開終了日時"
+        scope:
+          type: "string"
+          description: "公開状態"
+        imageUrl:
+          type: "string"
+          description: "イベントのサムネイル画像"
+        description:
+          type: "string"
+          description: "イベント紹介文"
+        id:
+          type: "string"
+          description: "イベントID"
+        title:
+          type: "string"
+          description: "イベント名・地域名"
+        userId:
+          type: "string"
+          description: "ユーザーID"
+        startDate:
+          type: "number"
+          description: "イベントの公開開始日時"
   GetAuthTokenRequestModel:
     type: "object"
     required:
@@ -677,18 +922,18 @@ definitions:
       message:
         type: "string"
         description: "メッセージ"
-  DeleteItemResponseModel:
+  PutEventResponseModel:
     type: "object"
     properties:
       message:
         type: "string"
         description: "メッセージ"
-  Error:
+  PostEventResponseModel:
     type: "object"
     properties:
       message:
         type: "string"
-    title: "Error Schema"
+        description: "メッセージ"
   GetUserResponseModel:
     type: "object"
     properties:
@@ -710,6 +955,202 @@ definitions:
       email:
         type: "string"
         description: "メールアドレス"
+  PostItemRequestModel:
+    type: "object"
+    required:
+    - "coordinate"
+    - "description"
+    - "eventId"
+    - "radius"
+    - "scope"
+    - "title"
+    properties:
+      eventId:
+        type: "string"
+        description: "イベントID"
+      file:
+        type: "object"
+        description: "アイテムのファイル情報"
+        properties:
+          dataURI:
+            type: "string"
+            description: "ファイルのデータURI"
+          type:
+            type: "string"
+            description: "データの種類(file, link)"
+        required:
+        - "dataURI"
+        - "type"
+      coordinate:
+        type: "object"
+        description: "アイテムの座標"
+        properties:
+          latitude:
+            type: "string"
+            description: "アイテム配置の緯度"
+          longitude:
+            type: "string"
+            description: "アイテム配置の経度"
+        required:
+        - "latitude"
+        - "longitude"
+      scope:
+        type: "string"
+        description: "公開状態"
+      description:
+        type: "string"
+        description: "アイテム紹介文"
+      title:
+        type: "string"
+        description: "アイテム名"
+      radius:
+        type: "number"
+        description: "アイテム配置の半径"
+    description: "アイテム情報を作成します。"
+  PostUserResponseModel:
+    type: "object"
+    properties:
+      token:
+        type: "string"
+        description: "JWTトークン"
+  DeleteEventResponseModel:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+        description: "メッセージ"
+  GetAuthTokenResponseModel:
+    type: "object"
+    properties:
+      token:
+        type: "string"
+        description: "JWTトークン"
+  PostUserRequestModel:
+    type: "object"
+    required:
+    - "description"
+    - "email"
+    - "iconDataURI"
+    - "name"
+    - "password"
+    properties:
+      password:
+        type: "string"
+        description: "パスワード"
+      iconDataURI:
+        type: "string"
+        description: "アイコン画像のデータURL"
+      name:
+        type: "string"
+        description: "アカウント名前 (企業名・店名)"
+      description:
+        type: "string"
+        description: "アカウント紹介文"
+      email:
+        type: "string"
+        description: "メールアドレス"
+    description: "アカウント情報を登録します。"
+  PutEventRequestModel:
+    type: "object"
+    required:
+    - "address"
+    - "description"
+    - "endDate"
+    - "scope"
+    - "startDate"
+    - "title"
+    properties:
+      address:
+        type: "string"
+        description: "イベント住所"
+      endDate:
+        type: "number"
+        description: "イベントの公開終了日時"
+      scope:
+        type: "string"
+        description: "公開状態"
+      description:
+        type: "string"
+        description: "イベント紹介文"
+      imageDataURI:
+        type: "string"
+        description: "イベントのサムネイル画像のデータURI"
+      title:
+        type: "string"
+        description: "イベント名・地域名"
+      startDate:
+        type: "number"
+        description: "イベントの公開開始日時"
+    description: "イベントを更新します。"
+  PutUserRequestModel:
+    type: "object"
+    required:
+    - "description"
+    - "email"
+    - "iconDataURI"
+    - "name"
+    - "password"
+    properties:
+      password:
+        type: "string"
+        description: "パスワード"
+      iconDataURI:
+        type: "string"
+        description: "アイコン画像のデータURL"
+      name:
+        type: "string"
+        description: "アカウント名前 (企業名・店名)"
+      description:
+        type: "string"
+        description: "アカウント紹介文"
+      email:
+        type: "string"
+        description: "メールアドレス"
+    description: "アカウント情報を更新します。"
+  DeleteItemResponseModel:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+        description: "メッセージ"
+  Error:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+    title: "Error Schema"
+  PostEventRequestModel:
+    type: "object"
+    required:
+    - "address"
+    - "description"
+    - "endDate"
+    - "scope"
+    - "startDate"
+    - "title"
+    properties:
+      address:
+        type: "string"
+        description: "イベント住所"
+      endDate:
+        type: "number"
+        description: "イベントの公開終了日時"
+      scope:
+        type: "string"
+        description: "公開状態"
+      description:
+        type: "string"
+        description: "イベント紹介文"
+      imageDataURI:
+        type: "string"
+        description: "イベントのサムネイル画像のデータURI"
+      title:
+        type: "string"
+        description: "イベント名・地域名"
+      startDate:
+        type: "number"
+        description: "イベントの公開開始日時"
+    description: "イベントを作成します。"
   PutUserResponseModel:
     type: "object"
     properties:
@@ -719,6 +1160,12 @@ definitions:
   GetItemResponseModel:
     type: "object"
     properties:
+      eventId:
+        type: "string"
+        description: "イベントID"
+      createdAt:
+        type: "number"
+        description: "アイテム登録日時"
       coordinate:
         type: "object"
         description: "アイテムの座標"
@@ -736,29 +1183,15 @@ definitions:
         type: "object"
         description: "アイテムのファイル情報"
         properties:
-          extension:
+          dataURI:
             type: "string"
-            description: "ファイル拡張子"
-          size:
-            type: "number"
-            description: "ファイルサイズ(バイト)"
-          mime:
+            description: "ファイルのデータURI"
+          type:
             type: "string"
-            description: "ファイル形式のMIME"
-          name:
-            type: "string"
-            description: "ファイル名"
+            description: "データの種類(file, link)"
         required:
-        - "extension"
-        - "mime"
-        - "name"
-        - "size"
-      uploadDate:
-        type: "string"
-        description: "アイテム登録日時"
-      endDate:
-        type: "string"
-        description: "アイテムの公開終了日時"
+        - "dataURI"
+        - "type"
       scope:
         type: "string"
         description: "公開状態"
@@ -774,72 +1207,9 @@ definitions:
       radius:
         type: "number"
         description: "アイテム配置の半径"
-      startDate:
+      userId:
         type: "string"
-        description: "アイテムの公開開始日時"
-  PostItemRequestModel:
-    type: "object"
-    required:
-    - "coordinate"
-    - "description"
-    - "endDate"
-    - "radius"
-    - "startDate"
-    - "title"
-    properties:
-      file:
-        type: "object"
-        description: "アイテムのファイル情報"
-        properties:
-          extension:
-            type: "string"
-            description: "ファイル拡張子"
-          size:
-            type: "number"
-            description: "ファイルサイズ(バイト)"
-          mime:
-            type: "string"
-            description: "ファイル形式のMIME"
-          name:
-            type: "string"
-            description: "ファイル名"
-        required:
-        - "extension"
-        - "mime"
-        - "name"
-        - "size"
-      coordinate:
-        type: "object"
-        description: "アイテムの座標"
-        properties:
-          latitude:
-            type: "string"
-            description: "アイテム配置の緯度"
-          longitude:
-            type: "string"
-            description: "アイテム配置の経度"
-        required:
-        - "latitude"
-        - "longitude"
-      endDate:
-        type: "string"
-        description: "アイテムの公開終了日時"
-      scope:
-        type: "string"
-        description: "公開状態"
-      description:
-        type: "string"
-        description: "アイテム紹介文"
-      title:
-        type: "string"
-        description: "アイテム名"
-      radius:
-        type: "number"
-        description: "アイテム配置の半径"
-      startDate:
-        type: "string"
-        description: "アイテムの公開開始日時"
-    description: "アイテム情報を取得します。"
+        description: "ユーザーID"
   GetDownloadLogResponseModel:
     type: "array"
     items:
@@ -848,6 +1218,12 @@ definitions:
         item:
           type: "object"
           properties:
+            eventId:
+              type: "string"
+              description: "イベントID"
+            createdAt:
+              type: "number"
+              description: "アイテム登録日時"
             coordinate:
               type: "object"
               description: "アイテムの座標"
@@ -861,34 +1237,6 @@ definitions:
               required:
               - "latitude"
               - "longitude"
-            file:
-              type: "object"
-              description: "アイテムのファイル情報"
-              properties:
-                extension:
-                  type: "string"
-                  description: "ファイル拡張子"
-                data:
-                  type: "string"
-                  description: "ファイルデータ(base64)"
-                size:
-                  type: "number"
-                  description: "ファイルサイズ(バイト)"
-                mime:
-                  type: "string"
-                  description: "ファイル形式のMIME"
-                name:
-                  type: "string"
-                  description: "ファイル名"
-              required:
-              - "data"
-              - "extension"
-              - "mime"
-              - "name"
-              - "size"
-            uploadDate:
-              type: "string"
-              description: "アイテム登録日時"
             scope:
               type: "string"
               description: "公開状態"
@@ -906,22 +1254,16 @@ definitions:
               description: "アイテム配置の半径"
             userId:
               type: "string"
-              description: "ユーザー名"
-        downloadDate:
-          type: "string"
-          description: "ダウンロード日時"
+              description: "ユーザーID"
         ip:
           type: "string"
           description: "IPアドレス"
+        downloadedAt:
+          type: "number"
+          description: "ダウンロード日時"
         userAgent:
           type: "string"
           description: "ユーザーエージェント"
-  PostUserResponseModel:
-    type: "object"
-    properties:
-      token:
-        type: "string"
-        description: "JWTトークン"
   DeleteUserResponseModel:
     type: "object"
     properties:
@@ -933,9 +1275,8 @@ definitions:
     required:
     - "coordinate"
     - "description"
-    - "endDate"
     - "radius"
-    - "startDate"
+    - "scope"
     - "title"
     properties:
       coordinate:
@@ -951,9 +1292,6 @@ definitions:
         required:
         - "latitude"
         - "longitude"
-      endDate:
-        type: "string"
-        description: "アイテムの公開終了日時"
       scope:
         type: "string"
         description: "公開状態"
@@ -966,15 +1304,51 @@ definitions:
       radius:
         type: "number"
         description: "アイテム配置の半径"
-      startDate:
-        type: "string"
-        description: "アイテムの公開開始日時"
     description: "アイテム情報を更新します。"
+  GetEventResponseModel:
+    type: "object"
+    properties:
+      createdAt:
+        type: "number"
+        description: "イベント登録日時"
+      address:
+        type: "string"
+        description: "イベント住所"
+      endDate:
+        type: "number"
+        description: "イベントの公開終了日時"
+      scope:
+        type: "string"
+        description: "公開状態"
+      imageUrl:
+        type: "string"
+        description: "イベントのサムネイル画像"
+      description:
+        type: "string"
+        description: "イベント紹介文"
+      id:
+        type: "string"
+        description: "イベントID"
+      title:
+        type: "string"
+        description: "イベント名・地域名"
+      userId:
+        type: "string"
+        description: "ユーザーID"
+      startDate:
+        type: "number"
+        description: "イベントの公開開始日時"
   GetAllItemResponseModel:
     type: "array"
     items:
       type: "object"
       properties:
+        eventId:
+          type: "string"
+          description: "イベントID"
+        createdAt:
+          type: "number"
+          description: "アイテム登録日時"
         coordinate:
           type: "object"
           description: "アイテムの座標"
@@ -988,33 +1362,6 @@ definitions:
           required:
           - "latitude"
           - "longitude"
-        file:
-          type: "object"
-          description: "アイテムのファイル情報"
-          properties:
-            extension:
-              type: "string"
-              description: "ファイル拡張子"
-            size:
-              type: "number"
-              description: "ファイルサイズ(バイト)"
-            mime:
-              type: "string"
-              description: "ファイル形式のMIME"
-            name:
-              type: "string"
-              description: "ファイル名"
-          required:
-          - "extension"
-          - "mime"
-          - "name"
-          - "size"
-        uploadDate:
-          type: "string"
-          description: "アイテム登録日時"
-        endDate:
-          type: "string"
-          description: "アイテムの公開終了日時"
         scope:
           type: "string"
           description: "公開状態"
@@ -1030,15 +1377,9 @@ definitions:
         radius:
           type: "number"
           description: "アイテム配置の半径"
-        startDate:
+        userId:
           type: "string"
-          description: "アイテムの公開開始日時"
-  GetAuthTokenResponseModel:
-    type: "object"
-    properties:
-      token:
-        type: "string"
-        description: "JWTトークン"
+          description: "ユーザーID"
   DeleteUserRequestModel:
     type: "object"
     required:
