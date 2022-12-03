@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-11-29T03:03:32Z"
+  version: "2022-12-03T12:41:28Z"
   title: "DropGoAdminApi"
 host: "admin.drop-go-api.xyz"
 schemes:
@@ -22,22 +22,22 @@ paths:
             Access-Control-Allow-Headers:
               type: "string"
   /auth:
-    get:
+    post:
       consumes:
       - "application/json"
       produces:
       - "application/json"
       parameters:
       - in: "body"
-        name: "GetAuthTokenRequestModel"
+        name: "PostAuthTokenRequestModel"
         required: true
         schema:
-          $ref: "#/definitions/GetAuthTokenRequestModel"
+          $ref: "#/definitions/PostAuthTokenRequestModel"
       responses:
         "200":
           description: "200 response"
           schema:
-            $ref: "#/definitions/GetAuthTokenResponseModel"
+            $ref: "#/definitions/PostAuthTokenResponseModel"
           headers:
             Access-Control-Allow-Origin:
               type: "string"
@@ -998,19 +998,6 @@ definitions:
         startDate:
           type: "number"
           description: "イベントの公開開始日時"
-  GetAuthTokenRequestModel:
-    type: "object"
-    required:
-    - "email"
-    - "password"
-    properties:
-      password:
-        type: "string"
-        description: "パスワード"
-      email:
-        type: "string"
-        description: "メールアドレス"
-    description: "email, passwordでJWTトークンを返します。"
   PostItemResponseModel:
     type: "object"
     properties:
@@ -1035,6 +1022,12 @@ definitions:
       id:
         type: "string"
         description: "イベントID"
+  PostAuthTokenResponseModel:
+    type: "object"
+    properties:
+      token:
+        type: "string"
+        description: "JWTトークン"
   GetItemDownloadResponseModel:
     type: "object"
     properties:
@@ -1133,12 +1126,6 @@ definitions:
       message:
         type: "string"
         description: "メッセージ"
-  GetAuthTokenResponseModel:
-    type: "object"
-    properties:
-      token:
-        type: "string"
-        description: "JWTトークン"
   PostUserRequestModel:
     type: "object"
     required:
@@ -1225,6 +1212,19 @@ definitions:
       message:
         type: "string"
         description: "メッセージ"
+  PostAuthTokenRequestModel:
+    type: "object"
+    required:
+    - "email"
+    - "password"
+    properties:
+      password:
+        type: "string"
+        description: "パスワード"
+      email:
+        type: "string"
+        description: "メールアドレス"
+    description: "email, passwordでJWTトークンを返します。"
   Error:
     type: "object"
     properties:
