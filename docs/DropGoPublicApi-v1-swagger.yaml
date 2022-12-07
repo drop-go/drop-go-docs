@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-12-03T14:06:41Z"
+  version: "2022-12-07T09:11:08Z"
   title: "DropGoPublicApi"
 host: "public.drop-go-api.xyz"
 schemes:
@@ -536,6 +536,9 @@ definitions:
       scope:
         type: "string"
         description: "公開状態(public, private, hidden)"
+      imageUrl:
+        type: "string"
+        description: "イベントのサムネイル画像"
       description:
         type: "string"
         description: "イベント紹介文"
@@ -568,6 +571,9 @@ definitions:
         scope:
           type: "string"
           description: "公開状態(public, private, hidden)"
+        imageUrl:
+          type: "string"
+          description: "イベントのサムネイル画像"
         description:
           type: "string"
           description: "イベント紹介文"
