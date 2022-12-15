@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-12-07T09:11:08Z"
+  version: "2022-12-15T04:39:50Z"
   title: "DropGoPublicApi"
 host: "public.drop-go-api.xyz"
 schemes:
@@ -426,49 +426,18 @@ definitions:
   GetPublicItemDwonloadResponseModel:
     type: "object"
     properties:
-      createdAt:
-        type: "number"
-        description: "アイテム登録日時"
-      file:
-        type: "object"
-        description: "アイテムのファイル情報"
-        properties:
-          fileName:
-            type: "string"
-            description: "ファイル名"
-          extension:
-            type: "string"
-            description: "ファイル拡張子"
-          type:
-            type: "string"
-            description: "データの種類(file, link)"
-        required:
-        - "fileName"
-        - "type"
-      latitude:
+      fileName:
         type: "string"
-        description: "アイテム配置の緯度"
-      scope:
+        description: "ファイル名"
+      extension:
         type: "string"
-        description: "公開状態(public, private, hidden)"
-      description:
+        description: "ファイル拡張子"
+      dataURI:
         type: "string"
-        description: "アイテム紹介文"
-      id:
+        description: "ファイルのデータURI"
+      type:
         type: "string"
-        description: "アイテムID"
-      title:
-        type: "string"
-        description: "アイテム名"
-      radius:
-        type: "number"
-        description: "アイテム配置の半径"
-      userId:
-        type: "string"
-        description: "ユーザーID"
-      longitude:
-        type: "string"
-        description: "アイテム配置の経度"
+        description: "データの種類(file, link)"
   GetPublicItemResponseModel:
     type: "object"
     properties:
