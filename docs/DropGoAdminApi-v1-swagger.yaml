@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-12-03T12:41:28Z"
+  version: "2023-01-07T08:51:35Z"
   title: "DropGoAdminApi"
 host: "admin.drop-go-api.xyz"
 schemes:
@@ -1031,18 +1031,53 @@ definitions:
   GetItemDownloadResponseModel:
     type: "object"
     properties:
-      fileName:
+      createdAt:
+        type: "number"
+        description: "アイテム登録日時"
+      file:
+        type: "object"
+        description: "アイテムのファイル情報"
+        properties:
+          fileName:
+            type: "string"
+            description: "ファイル名"
+          extension:
+            type: "string"
+            description: "ファイル拡張子"
+          dataURI:
+            type: "string"
+            description: "ファイルのデータURI"
+          type:
+            type: "string"
+            description: "データの種類(file, link)"
+        required:
+        - "dataURI"
+        - "fileName"
+        - "type"
+      latitude:
         type: "string"
-        description: "ファイル名"
-      extension:
+        description: "アイテム配置の緯度"
+      scope:
         type: "string"
-        description: "ファイル拡張子"
-      dataURI:
+        description: "公開状態(public, private, hidden)"
+      description:
         type: "string"
-        description: "ファイルのデータURI"
-      type:
+        description: "アイテム紹介文"
+      id:
         type: "string"
-        description: "データの種類(file, link)"
+        description: "アイテムID"
+      title:
+        type: "string"
+        description: "アイテム名"
+      radius:
+        type: "number"
+        description: "アイテム配置の半径"
+      userId:
+        type: "string"
+        description: "ユーザーID"
+      longitude:
+        type: "string"
+        description: "アイテム配置の経度"
   GetUserResponseModel:
     type: "object"
     properties:
